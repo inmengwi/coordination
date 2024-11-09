@@ -1,0 +1,33 @@
+# Kotlin / Java 관련
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.hprof
+
+# Gradle 관련
+.gradle/
+build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+.gradle/cache/
+.gradle/configuration-cache/
+.gradle/file-system-state/
+.gradle/gradle-journal/
+.gradle/vcs-1/
+
+# IntelliJ IDEA 관련
+.idea/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/shelf/
+.idea/**/modules.xml
+.idea/**/vcs.xml
+.idea/**/assetWizardSettings.xml
+.idea/**/assets/
+
+# 기타 OS 관련 파일
+.DS_Store
+Thumbs.db
