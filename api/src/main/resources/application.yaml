@@ -1,0 +1,10 @@
+spring.application.name: catalog
+
+spring:
+  profiles:
+    group:
+      local:
+        - custom
+        - h2
+
+

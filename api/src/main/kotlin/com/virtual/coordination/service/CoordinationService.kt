@@ -1,9 +1,6 @@
 package com.virtual.coordination.service
 
-import com.virtual.coordination.entity.Catalog
-import com.virtual.coordination.entity.Category
-import com.virtual.coordination.entity.HighestAndLowest
-import com.virtual.coordination.entity.CategoryItem
+import com.virtual.coordination.entity.*
 import com.virtual.coordination.repository.CatalogRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -58,5 +55,5 @@ class CoordinationService @Autowired constructor(
 
     private fun getCatalogBy(category: Category, priceType: PriceType) =
         catalogRepository.findTopByCategory(category.code, priceType == PriceType.Lowest)
-            ?: throw IllegalStateException("카테고리에 해당하는 가격 정보를 찾을 수 없습니다.")
+            ?: throw BusinessException("카테고리에 해당하는 가격 정보를 찾을 수 없습니다.", category.code)
 }
