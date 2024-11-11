@@ -6,5 +6,4 @@ spring:
       local:
         - custom
         - h2
-
-
+    active: local
