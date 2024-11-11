@@ -25,13 +25,13 @@ const CatalogItemTable = ({ catalogItems, isNeedSum }) => {
                 <thead>
                 <tr>
                     {tHead.category && (
-                        <th style={{border: '1px solid #ddd', padding: '8px', backgroundColor: '#f2f2f2'}}>카테고리</th>
+                        <th>카테고리</th>
                     )}
                     {tHead.brand && (
-                        <th style={{border: '1px solid #ddd', padding: '8px', backgroundColor: '#f2f2f2'}}>브랜드</th>
+                        <th>브랜드</th>
                     )}
                     {tHead.price && (
-                        <th style={{border: '1px solid #ddd', padding: '8px', backgroundColor: '#f2f2f2'}}>가격</th>
+                        <th>가격</th>
                     )}
                 </tr>
                 </thead>
@@ -39,17 +39,13 @@ const CatalogItemTable = ({ catalogItems, isNeedSum }) => {
                 {catalogItems.map((item, index) => (
                     <tr key={index}>
                     {item.category && (
-                        <td style={{border: '1px solid #ddd', padding: '8px', textAlign: 'center'}}>
-                            {Categories.get(item.category)}
-                        </td>
+                        <td>{Categories.get(item.category)}</td>
                     )}
                     {item.brand && (
-                        <td style={{border: '1px solid #ddd', padding: '8px', textAlign: 'center'}}>{item.brand}</td>
+                        <td>{item.brand}</td>
                     )}
                     {item.price && (
-                        <td style={{border: '1px solid #ddd', padding: '8px', textAlign: 'center'}}>
-                            {item.price.toLocaleString()}
-                        </td>
+                        <td >{item.price.toLocaleString()}</td>
                     )}
                     </tr>
                 ))}

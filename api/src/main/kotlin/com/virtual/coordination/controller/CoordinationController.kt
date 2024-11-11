@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*
 
 @Tag(name = "Coordination", description = "Coordination Query API")
 @RestController
-@CrossOrigin(origins = ["*"])
 @RequestMapping("/coordination")
 class CoordinationController @Autowired constructor(
     private val coordinationService: CoordinationService,
