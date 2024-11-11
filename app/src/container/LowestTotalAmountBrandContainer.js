@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import CatalogItemTable from "../components/CatalogItemTable";
 
-const LowestTotalAmountBrand = ({ categories }) => {
+const LowestTotalAmountBrandContainer = () => {
     const [lowestPriceCatalog, setLowestPriceCatalog] = useState(null);
 
     const fetchLowestBrandCatalog = async () => {
@@ -24,10 +25,11 @@ const LowestTotalAmountBrand = ({ categories }) => {
             {lowestPriceCatalog && (
                 <div>
                     <p>브랜드: {lowestPriceCatalog.brand}</p>
+                    <CatalogItemTable catalogItems={ lowestPriceCatalog.categories } isNeedSum={ true } />
                 </div>
             )}
         </div>
     );
 };
 
-export default LowestTotalAmountBrand;
+export default LowestTotalAmountBrandContainer;

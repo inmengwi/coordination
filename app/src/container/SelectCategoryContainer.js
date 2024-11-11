@@ -1,8 +1,8 @@
-// SelectCategory.js
 import React, { useState } from 'react';
 import axios from "axios";
+import SelectCategory from "../components/SelectCategory";
 
-const SelectCategory = ({ categories, onDataFetched }) => {
+const SelectCategoryContainer = ( { onDataFetched }) => {
     const [selectedCategory, setSelectedCategory] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -34,25 +34,15 @@ const SelectCategory = ({ categories, onDataFetched }) => {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
-            <label htmlFor="category-select">카테고리 선택: </label>
-            <select
-                id="category-select"
-                value={selectedCategory}
-                onChange={handleChange}
-                style={{ padding: '5px', fontSize: '16px' }}
-            >
-                <option value="">카테고리 선택</option>
-                {Array.from(categories).map(([key, name]) => (
-                    <option key={key} value={key}>
-                        {name}
-                    </option>
-                ))}
-            </select>
+        <div>
+            <SelectCategory
+                selectedCategory={ selectedCategory }
+                handleChange={ handleChange }
+            />
             {loading && <p>데이터를 불러오는 중...</p>}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {error && <p style={{color: 'red'}}>{error}</p>}
         </div>
-    );
+    )
 };
 
-export default SelectCategory;
+export default SelectCategoryContainer;
