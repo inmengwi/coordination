@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class BrandService @Autowired constructor(
+class CatalogService @Autowired constructor(
     private val catalogRepository: CatalogRepository
 ) {
     fun add(catalogs: List<Catalog>) : List<Catalog> {
@@ -23,5 +23,9 @@ class BrandService @Autowired constructor(
 
     fun existsBy(brand: String): Boolean {
         return catalogRepository.existsById(brand)
+    }
+
+    fun findAll() : List<Catalog> {
+        return catalogRepository.findAll();
     }
 }
